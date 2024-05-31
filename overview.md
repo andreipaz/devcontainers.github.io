@@ -19,7 +19,7 @@ Since the spec was initally published, dev container metadata can now be stored 
 
 A development container defines an environment in which you develop your application before you are ready to deploy. While deployment and development containers may resemble one another, you may not want to include tools in a deployment image that you use during development.
 
-<img alt="Diagram of inner and outer loop of container-based development" src="img/dev-container-stages.png"/>
+<img alt="Diagram of inner and outer loop of container-based development" src="/assets/img/dev-container-stages.png"/>
 
 ### <a href="#build-and-test" name="build-and-test" class="anchor">  Build and test </a>
 
