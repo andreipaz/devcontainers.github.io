@@ -4,6 +4,7 @@ title:  "Development Container Specification"
 shortTitle: "Specification"
 author: Microsoft
 index: 1
+
 ---
 
 The purpose of the **Development Container Specification** is to provide a way to enrich containers with the content and metadata necessary to enable development inside them. These container **environments** should be easy to use, create, and recreate. 

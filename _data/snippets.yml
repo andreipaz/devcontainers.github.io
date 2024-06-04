@@ -1,0 +1,20 @@
+en:
+  topnav:
+    overview: Overview
+    reference: Reference
+    specification: Specification
+    supporting_tools: Supporting Tools
+    guides: Guides
+    available_features: Available Features
+    available_templates: Available Templates
+    collections: Collections
+pt:
+  topnav:
+    overview: Visão Geral
+    reference: Referência
+    specification: Especificações
+    supporting_tools: Ferramentas
+    guides: Guias
+    available_features: Funcionalidades
+    available_templates: Templates
+    collections: Coleções

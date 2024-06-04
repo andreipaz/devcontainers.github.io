@@ -4,6 +4,7 @@ title:  "Dev Container Templates distribution and discovery"
 shortTitle: "Templates distribution"
 author: Microsoft
 index: 8
+
 ---
 
 **TL;DR Check out the [quick start repository](https://github.com/devcontainers/template-starter) to get started on distributing your own Dev Container Templates.**

@@ -19,7 +19,6 @@ plugins:
   - jemoji
   - jekyll-feed
 
-
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -30,37 +29,22 @@ exclude:
 
 timezone: Europe/Zurich
 
+collections_dir: content
+collections:
+  en:
+    output: true
+
 defaults:
 - scope:
-    path: _posts
-    type: posts
+    path: content/*/guides
   values:
+    category: guide
+    permalink: :collection/guides/:title
     layout: post
     sectionid: guide
-
 - scope:
-    path: _docs
-    type: docs
+    path: content/*/implementors
   values:
-    layout: docs
-    sectionid: docs
-    seo:
-      type: "WebPage"
-
-- scope:
-    path: _implementors
-    type: implementors
-  values:
+    category: implementors
     layout: implementors
     sectionid: implementors
-
-collections:
-  docs:
-    permalink: /:collection/:path/
-    output: true
-  posts:
-    permalink: /guide/:title
-    output: true
-  implementors:
-    permalink: /:collection/:path/
-    output: true

@@ -4,39 +4,60 @@
             <h1>Development Containers</h1>
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="navbar-collapse collapse" id="navbarSupportedContent" role="navigation" aria-label="Top Level">
-            {% assign sorted = site.implementors | sort: 'index' %}
+            {% assign language = page.collection %}
+            {% unless page.collection %}{% assign language = 'en' %}{% endunless %}
+            {% assign snippets = site.data.snippets[language] %}
+            {% assign localizedurl = language | prepend: '/' | prepend: site.baseurl %}
+            {% assign sorted = site.en | where: 'category', 'implementors' | sort: 'index' %}
             <ul class="navbar-nav ml-auto">
-                <li {% if page.sectionid=='howItWorks' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href='{{ "/overview" | prepend: site.baseurl }}'>Overview</a>
+                <li class="nav-item {% if page.sectionid=='overview' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/overview" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.overview }}
+                    </a>
                 </li>
-                <!--<li {% if page.sectionid=='implementors' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href="{{ sorted.first.url | prepend: site.baseurl }}">Implementations</a>
-                </li>-->
-                <li {% if page.sectionid=='metadata' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href="{{ "/implementors/json_reference" | prepend: site.baseurl }}">Reference</a>
+                <li class="nav-item {% if page.sectionid=='metadata' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/implementors/json_reference" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.reference }}
+                    </a>
                 </li>
-                <li {% if page.sectionid=='implementors' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href="{{ sorted.first.url | prepend: site.baseurl }}">Specification</a>
+                <li class="nav-item {% if page.sectionid=='implementors' %} active{% endif %}">
+                    <a class="nav-link" href="{{ sorted.first.url }}">
+                        {{ snippets.topnav.specification }}
+                    </a>
                 </li>
-                <li {% if page.sectionid=='supporting' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href='{{ "/supporting" | prepend: site.baseurl }}'>Supporting Tools</a>
+                <li class="nav-item {% if page.sectionid=='supporting' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/supporting" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.supporting_tools }}
+                    </a>
                 </li>
-                <li {% if page.sectionid=='guides' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href='{{ "/guides" | prepend: site.baseurl }}'>Guides</a>
+                <li class="nav-item {% if page.sectionid=='guides' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/guides" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.guides }}
+                    </a>
                 </li>
-                <li {% if page.sectionid=='features' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href='{{ "/features" | prepend: site.baseurl }}'>Available Features</a>
+                <li class="nav-item {% if page.sectionid=='features' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/features" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.available_features }}
+                    </a>
                 </li>
-                <li {% if page.sectionid=='features' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href='{{ "/templates" | prepend: site.baseurl }}'>Available Templates</a>
+                <li class="nav-item {% if page.sectionid=='features' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/templates" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.available_templates }}
+                    </a>
                 </li>
-                <li {% if page.sectionid=='collections' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href='{{ "/collections" | prepend: site.baseurl }}'>Collections</a>
+                <li class="nav-item {% if page.sectionid=='collections' %} active{% endif %}">
+                    <a class="nav-link" href='{{ "/collections" | prepend: localizedurl }}'>
+                        {{ snippets.topnav.collections }}
+                    </a>
                 </li>
             </ul>
         </div>
