@@ -1,0 +1,16 @@
+---
+title: Guias de Dev Container 
+layout: singlePage
+---
+{% assign posts = site[page.collection]
+  | where: 'category', 'guide'
+  | sort: 'date'
+  | reverse
+%} 
+{% for post in posts %}
+  <p>
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p>{{ post.date | date_to_string }}</a></p>
+    {{ post.excerpt }}
+  </p>
+{% endfor %}

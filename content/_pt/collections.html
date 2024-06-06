@@ -1,0 +1,61 @@
+---
+title: Coleções
+layout: table
+sectionid: collection-index
+---
+
+<h1 style="margin-left: auto;margin-right: auto;">Coleções</h1>
+<p style="margin-left: auto;margin-right: auto;">
+    A lista abaixo contém links recursos oficiais e os que são contribuições da comunidade, incluindo Features e Templates. As coleções nessa lista são monitoradas continuamente e podem ser exibidas na UX de ferramentas que suportam a spec (por exemplo, serão exibidas no GitHub Codespaces e na UX do VS Code Dev Containers).
+</p>
+
+<p>
+    Para adicionar sua própria coleção à essa lista, crie um PR editando <a href="https://github.com/devcontainers/devcontainers.github.io/blob/gh-pages/_data/collection-index.yml">esse arquivo yaml</a>.
+</p>
+
+<input type="text" id="searchInput" placeholder="Search">
+
+<br>
+<br>
+
+<table id="collectionTable" class="tg">
+    <tr>
+        <td class="tg-0lax"><b>Nome</b></td>
+        <td class="tg-0lax"><b>Mantenedor</b></td>
+        <td class="tg-0lax"><b>Repositório</b></td>
+    </tr>
+
+    {% for c in site.data.collection-index %}
+    <tr>
+        <td class="tg-0lax">{{ c.name }}</td>
+        <td class="tg-0lax">
+            <a rel="nofollow" href="{{ c.contact | strip_html  }}">{{ c.maintainer | strip_html }}</a>
+        </td>
+        <td class="tg-0lax">
+            <a rel="nofollow" href="{{ c.repository | strip_html  }}">{{ c.repository | strip_html }}</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const collectionTable = document.getElementById('collectionTable');
+    const rows = collectionTable.getElementsByTagName('tr');
+
+    searchInput.addEventListener('input', function () {
+        const searchValue = searchInput.value.toLowerCase();
+
+        for (let i = 1; i < rows.length; i++) {
+            const name = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+            const maintainer = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+            const repository = rows[i].getElementsByTagName('td')[2].textContent.toLowerCase();
+
+            if (name.includes(searchValue) || maintainer.includes(searchValue) || repository.includes(searchValue)) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    });
+</script>

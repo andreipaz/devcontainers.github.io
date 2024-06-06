@@ -33,6 +33,8 @@ collections_dir: content
 collections:
   en:
     output: true
+  pt:
+    output: true
 
 defaults:
 - scope:
