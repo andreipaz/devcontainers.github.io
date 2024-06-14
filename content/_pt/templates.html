@@ -6,20 +6,15 @@ sectionid: collection-index-templates
 
 <h1 style="margin-left: auto;margin-right: auto;">Templates Disponíveis</h1>
 <p style="margin-left: auto;margin-right: auto;">
-    This table contains all official and community-supported <a href="implementors/templates/">Dev Container Templates</a>
-    known at the time of crawling <a href="collections">each registered collection</a>. This list is continuously 
-    updated with the latest available Template information. See the <a href="https://github.com/devcontainers/template-starter">
-    Template quick start repository</a> to add your own!
+    Essa tabela contém todas os <a href="implementors/templates/">Dev Container Templates</a> oficiais e os suportados pela comunidade que eram conhecidos até o momento do crawling <a href="collections">das categorias registradas</a>. Essa lista é continuamente atualizada com as últimas informações disponíveis de templates. Veja o <a href="https://github.com/devcontainers/template-starter">repositório de template modelo</a> para adicionar o seu próprio!
     <br><br>
-    Templates listed here will be presented in the UX of <a href="supporting">supporting tools</a>.
+    Templates listados aqui serão exibidos na UX das <a href="supporting">ferramentas que suportam a spec</a>.
     <br><br>
-    Please note that if you need to report a Template, you should do so through the registry hosting the Template.
+    Se precisar reportar algo sobre um Template, você deve fazer isso no registry onde o Template está hospedado.   
 </p>
 
 <p>
-    To add your own collection to this list, please create a PR editing <a
-        href="https://github.com/devcontainers/devcontainers.github.io/blob/gh-pages/_data/collection-index.yml">this
-        yaml file</a>.
+    Para adicionar sua própria coleção à essa lista, crie um PR editando <a href="https://github.com/devcontainers/devcontainers.github.io/blob/gh-pages/_data/collection-index.yml">esse arquivo yaml</a>.
 </p>
 
 <input type="text" id="searchInput" placeholder="Search">
@@ -28,10 +23,10 @@ sectionid: collection-index-templates
 
 <table id="collectionTable" class="tg">
     <tr>
-        <td class="tg-0lax"><b>Template Name</b></b></td>
-        <td class="tg-0lax"><b>Maintainer</b></td>
-        <td class="tg-0lax"><b>Reference</b></td>
-        <td class="tg-0lax"><b>Latest Version</b></td>
+        <td class="tg-0lax"><b>Nome</b></b></td>
+        <td class="tg-0lax"><b>Mantenedor</b></td>
+        <td class="tg-0lax"><b>Referência</b></td>
+        <td class="tg-0lax"><b>Última Versão</b></td>
     </tr>
     
     {% for c in site.data.devcontainer-index.collections %}

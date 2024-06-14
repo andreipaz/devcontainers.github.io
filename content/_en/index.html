@@ -67,12 +67,10 @@ layout: default
             </div>
             <div class="col-lg-4">
                 <h1 class="text-center"><img src="/assets/img/book.png" alt="Gear cogs"></h1>
-                {% comment %}
-                {% assign sorted = site.implementors | sort: 'index' %}
+                {% assign sorted = site[page.collection] | where: 'category', 'implementors' | sort: 'index' %}
                 <a href="{{ sorted.first.url | prepend: site.baseurl }}">
                     <h3 class="text-center">Specification</h3>
                 </a>
-                {% endcomment %}
                 <p>
                     Check out the latest reference implementation and schemas.
                 </p>
